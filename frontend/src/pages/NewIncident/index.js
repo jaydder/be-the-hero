@@ -13,7 +13,7 @@ export default function Register() {
   const [description, setDescription] = useState('');
   const [value, setValue] = useState('');
 
-  const longId = localStorage.getItem('ongId');
+  const ongId = localStorage.getItem('ongId');
 
   const history = useHistory
   async function handleCase(e) {
@@ -28,7 +28,7 @@ export default function Register() {
       try {
         await api.post('/incidents', data, {
           headers: {
-            Authorizarion: logoId,
+            Authorizarion: ongId,
           }
         })
         history.push('/profile')
